@@ -1,0 +1,210 @@
+
+       Codebook for DataTidy Project
+
+The codebook documentsthe variables used in the project.
+
+[1] Coded Variables
+
+There is only one coded variable - the Activity variable.
+
+In the HAR UCI set the codes are in file activity_labels.txt:
+
+1 WALKING
+2 WALKING_UPSTAIRS
+3 WALKING_DOWNSTAIRS
+4 SITTING
+5 STANDING
+6 LAYING
+but the numbers are used in  the actual data y_test.txt, y_train.txt.
+
+ For the sake of brevity , I have coded it as:
+1 Walk
+2 Walk_Upstairs
+3 WALK_Dwnstairs
+4 Sit
+5 Stand
+6 Lie
+and the alphabetic labels are used.
+
+===================================================================================
+
+[2] Libraries Used:				
+Name	Description			
+dplyr	R library used in the R code script			
+plyr	R library used in the R code script			
+				
+===================================================================================	
+
+[3] Variable List
+
+The rest of the codebook is a list of the major variables and their description.	
+---------------------------------------------------------------------------------		
+Data Sets Grouped by Association				
+Variables:	        Type       Dimension	Contents/Description	
+		                        Rows* Cols		
+X_test.txt	        text file	2947*561	measurements, test set	
+X_train.txt	        text file	7532*561	measurements, training set	
+y_test.txt	        text file	2947*1	    activitylist, test set	
+y_train.txt	        text file	7532*1	    activity list, training set	
+subject_test.txt    text file	2947*1	    subject list, test set	
+subject_train.txt	text file	7532*1	    subject list, training set	
+				
+Xtest.tbl	       data frame	2947*561	measurements, test set	
+Xtrain.tbl	       data frame	7532*561	measurements, training set	
+ytest.tbl	       data frame	2947*1	    activitylist, test set	
+ytrain.tbl	       data frame	7532*1	    activity list, training set	
+subjtest.tbl 	   data frame	2947*1	    subject list, test set	
+subjtrain.tbl	   data frame	7532*1	    subject list, training set	
+				
+ActivNames_test	   data frame	2947*1	    activitylist using labels, test set	
+ActivNames_train   data frame	7532*1	    activitylist using labels,, training set	
+				
+subj_act_test 	   data frame	2947*1	    Subject-Activity list, test set	
+subj_act_train	   data frame	7532*1	    Subject-Activity list, training set	
+				
+te	               data frame	2947*86	    selected measurements containing 'mean' or 'std', test set	
+tr	               data frame	7532*86	    selected measurements  containing 'mean' or 'std',, training set	
+				
+sa	               data frame	10299*2	    Subject-Activity list, for combined test & training sets	
+tetr               data frame	10299*86	selected measurements,  for combined test & training sets	
+combo	           data frame	10299*88	combination of sa & tetr.	
+tidydat	           data frame	180*88	    tidy data set (but not well ordered) of subject-activity combinations, with  means of the associated observations	
+TidyData           data frame	180*88	    tidy data set (nicely ordered) of subject-activity combinations, with  means of the associated observations	
+			                                The subjects are  ascending sorted integers and activities increase alphabetically within subject numbers.	
+TidyDataSet.txt	   text file		        text file version of TidyData	
+------------------------------------------------------------------------------------------		
+		
+Data Sets Sorted Alphabetically by Name				
+
+Variables:	          Type	   Dimension	Contents/Description	
+		                      Rows* Cols		
+ActivNames_test	   data frame	2947*1	    activitylist using labels, test set	
+ActivNames_train   data frame	7532*1	    activitylist using labels,, training set	
+combo	           data frame	10299*88	combination of sa & tetr.	
+sa	               data frame	10299*2	    Subject-Activity list, for combined test & training sets	
+subj_act_test 	   data frame	2947*1	    Subject-Activity list, test set	
+subj_act_train	   data frame	7532*1	    Subject-Activity list, training set	
+subject_test.txt   text file	2947*1	    subject list, test set	
+subject_train.txt  text file	7532*1	    subject list, training set	
+subjtest.tbl 	   data frame	2947*1	    subject list, test set	
+subjtrain.tbl	   data frame	7532*1	    subject list, training set	
+te	               data frame	2947*86	    selected measurements containing 'mean' or 'std', test set	
+tetr	           data frame	10299*86	selected measurements,  for combined test & training sets	
+tidydat	           data frame	180*88	    tidy data set (but not well ordered) of subject-activity combinations, with  means of the associated observations	
+TidyData	       data frame	180*88	    tidy data set (nicely ordered) of subject-activity combinations, with  means of the associated observations	
+TidyDataSet.txt	   text file		text    file version of TidyData	
+tr	               data frame	7532*86	    selected measurements  containing 'mean' or 'std',, training set	
+X_test.txt	       text file	2947*561	measurements, test set	
+X_train.txt	       text file	7532*561	measurements, training set	
+Xtest.tbl	       data frame	2947*561	measurements, test set	
+Xtrain.tbl	       data frame	7532*561	measurements, training set	
+y_test.txt	       text file	2947*1	    activitylist, test set	
+y_train.txt	       text file	7532*1	    activity list, training set	
+ytest.tbl	       data frame	2947*1	    activitylist, test set	
+ytrain.tbl	       data frame	7532*1	    activity list, training set	
+
+----------------------------------------------------------------------------------------------------------
+
+Explanation of Variable Names.				
+	
+The elements making up the measured variable names are explained					
+first letter, t 	 time domain signals captured at 50 Hz				
+first letter, f	     frequency domain signals, Fast Fourier Transform was applied to some signals.				
+Body 	             Body action obtained by subtractin the gravity effect from the signals.				
+Gravity 	         Gravity effect				
+Acc	                 Linear acceleration				
+Gyro	             Angular velocity				
+Mag	                 Magnitude of the 3-D signals using the Euclidian norm.				
+Jerk	             Derivative of the linear acceleration and angular velocity				
+mean	             mean value				
+std	                 standard deviation				
+					
+Selected Measured Variable List					
+Selected 	Original 		Variable  Name	
+Set Col No	 Col No
+1	           1		tBodyAcc.mean.X		
+2	           2		tBodyAcc.mean.Y		
+3	           3		tBodyAcc.mean.Z		
+4	           4		tBodyAcc.std.X		
+5	           5		tBodyAcc.std.Y		
+6	           6		tBodyAcc.std.Z		
+7	          41		tGravityAcc.mean.X		
+8	          42		tGravityAcc.mean.Y		
+9	          43		tGravityAcc.mean.Z		
+10	          44		tGravityAcc.std.X		
+11	          45		tGravityAcc.std.Y		
+12            46		tGravityAcc.std.Z		
+13	          81		tBodyAccJerk.mean.X		
+14	          82		tBodyAccJerk.mean.Y		
+15	          83		tBodyAccJerk.mean.Z		
+16        	  84		tBodyAccJerk.std.X		
+17	          85		tBodyAccJerk.std.Y		
+18	          86		tBodyAccJerk.std.Z		
+19	         121		tBodyGyro.mean.X		
+20	         122		tBodyGyro.mean.Y		
+21	         123		tBodyGyro.mean.Z		
+22	         124		tBodyGyro.std.X		
+23	         125		tBodyGyro.std.Y		
+24	         126		tBodyGyro.std.Z		
+25	         161		tBodyGyroJerk.mean.X		
+26	         162		tBodyGyroJerk.mean.Y		
+27         	 163		tBodyGyroJerk.mean.Z		
+28	         164		tBodyGyroJerk.std.X		
+29	         165		tBodyGyroJerk.std.Y		
+30	         166		tBodyGyroJerk.std.Z		
+31	         201		tBodyAccMag.mean		
+32	         202		tBodyAccMag.std		
+33	         214		tGravityAccMag.mean		
+34	         215		tGravityAccMag.std		
+35	         227		tBodyAccJerkMag.mean		
+36	         228		tBodyAccJerkMag.std		
+37	         240		tBodyGyroMag.mean		
+38	         241		tBodyGyroMag.std		
+39	         253		tBodyGyroJerkMag.mean		
+40	         254		tBodyGyroJerkMag.std		
+41	         266		fBodyAcc.mean.X		
+42           267		fBodyAcc.mean.Y		
+43	         268		fBodyAcc.mean.Z		
+44	         269		fBodyAcc.std.X		
+45	         270		fBodyAcc.std.Y		
+46	         271		fBodyAcc.std.Z		
+47	         294		fBodyAcc.meanFreq.X		
+48	         295		fBodyAcc.meanFreq.Y		
+49	         296		fBodyAcc.meanFreq.Z		
+50	         345		fBodyAccJerk.mean.X		
+51	         346		fBodyAccJerk.mean.Y		
+52	         347		fBodyAccJerk.mean.Z		
+53	         348		fBodyAccJerk.std.X		
+54	         349		fBodyAccJerk.std.Y		
+55	         350		fBodyAccJerk.std.Z		
+56	         373		fBodyAccJerk.meanFreq.X		
+57	         374		fBodyAccJerk.meanFreq.Y		
+58	         375		fBodyAccJerk.meanFreq.Z		
+59	         424		fBodyGyro.mean.X		
+60           425		fBodyGyro.mean.Y		
+61	         426		fBodyGyro.mean.Z		
+62	         427		fBodyGyro.std.X		
+63	         428		fBodyGyro.std.Y		
+64	         429		fBodyGyro.std.Z		
+65	         452		fBodyGyro.meanFreq.X		
+66	         453		fBodyGyro.meanFreq.Y		
+67	         454		fBodyGyro.meanFreq.Z		
+68	         503		fBodyAccMag.mean		
+69	         504		fBodyAccMag.std		
+70	         513		fBodyAccMag.meanFreq		
+71	         516		fBodyBodyAccJerkMag.mean		
+72           517		fBodyBodyAccJerkMag.std		
+73           526		fBodyBodyAccJerkMag.meanFreq		
+74           529		fBodyBodyGyroMag.mean		
+75	         530		fBodyBodyGyroMag.std		
+76	         539		fBodyBodyGyroMag.meanFreq		
+77	         542		fBodyBodyGyroJerkMag.mean		
+78	         543		fBodyBodyGyroJerkMag.std		
+79	         552		fBodyBodyGyroJerkMag.meanFreq		
+80	         555		angle(tBodyAccMean,gravity)		
+81	         556		angle(tBodyAccJerkMean),gravityMean)		
+82	         557		angle(tBodyGyroMean,gravityMean)		
+83	         558		angle(tBodyGyroJerkMean,gravityMean)		
+84	         559		angle(X,gravityMean)		
+85	         560		angle(Y,gravityMean)		
+86	         561		angle(Z,gravityMean)		
