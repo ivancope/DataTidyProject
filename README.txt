@@ -1,11 +1,8 @@
-# DataTidyProject
-Code to tidy UCI HAR Dataset, measurement on smartphone accelerometer & gyro
+[1] Introduction. 
 
-[1] Introduction.
+This script combines data sets from the HAR UCI Dataset, which represents mechanical motion captured by the accelerometer and gyro of a smartphone(Samsung Galaxy S II) into a coherent single data set that been structured to adhere to the the three principles of tidy data sets.
 
-This script combines data sets from the HAR UCI Dataset, which represents mechanical motion captured by the accelerometer and gyro of a smartphone(Samsung Galaxy S II) into a coherent single data set that has been structured to adhere to the the three principles of tidy data sets.
-
-The HAR UCI Dataset has a similar structure to the sketch below.   These are read into data frames for processing, mostly in R.
+The HAR UCI Dataset has a simmilar structure to the sketch below.   These are read into data frames for processing, mostly in R.
 
 The structure of these data frames is also similar and  they are  combined into one data set.  
 One can think of these files as jigsaw pieces that all go together to form a single data set of 10299 rows and 563 columns.
@@ -20,11 +17,9 @@ Finally, the final tidy data set is written to the file TidyDataSet.txt in the w
 
 
 Notes:
- i)  The diagnostic print statements utilised during coding have been retained in case they are required       for future need, but have been inactivated as comments.
+ i) The diagnostic print statements utilised during coding have been retained in case they are required     future need, but have been inactivated as comments.
 
-ii)  The section numbers [1], [2], etc are repeated in the R script for easy reference
-
-iii) This file seems to look better in Notepad than Notepad++.
+ii) The section numbers [1], [2], etc are repeated in the R script for easy reference
 
 ===================================================================================================
 
@@ -185,7 +180,7 @@ subjtrain.tbl is an integer data frame of subjects formed from subject_train.txt
      http://www.jstatsoft.org/v59/i10/paper
 
 ===================================================================================================== 
-[15] Acknowledgement.
+[14] Acknowledgement.
       
       Use of the UCI HAR Dataset is acknowledged, (reference {1}).
 ======================================================================================================
